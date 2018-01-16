@@ -6,7 +6,6 @@
 img_storage_path="/usr/share/limited_space/"
 
 ###################################################################################
-img_storage_filename=$(echo $img_storage_path | sed 's/\///g') #Image file name
 
 ########################################################################################3
 show_operation(){
@@ -67,6 +66,7 @@ then
   then
     mkdir "$img_storage_path"
   fi
+  img_storage_filename=$(realpath $2 | sed 's/\///g') #Generate image file name
   dd if=/dev/zero of=$img_storage_path$img_storage_filename bs=1M count=$3 # Construct an empty image file with required size
   find_error
   echo y|mkfs.ext3 $img_storage_path$img_storage_filename # Format the empty image we created into ext3 format.
@@ -80,6 +80,7 @@ then
   # The code for "drop" action
   umount $2 # unmont that folder
   find_error
+  img_storage_filename=$(realpath $2 | sed 's/\///g') #Generate image file name
   rm $img_storage_path$img_storage_filename # remove that image
   find_error
   echo "Done"
