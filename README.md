@@ -1,4 +1,4 @@
-# Traffic Accounting in Linux
+# Traffic Statistics in Linux
 This bash script would help you to get the traffic flowed in different port. 
 # Environment requirement
 <p>This bash script required iptables in your system. </p>
