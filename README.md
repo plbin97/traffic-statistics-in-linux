@@ -10,8 +10,9 @@ This bash script would help you to get the traffic flowed in different port.
 <hr>
 <p>If you wana to get the traffic flowed in port 80, you should start the traffic statistics with: </p>
 <p>./traffic_accounting.sh add 80</p>
-<p>After this command is executed, the system would start to account the traffic for port 80</p>
+<p>After this command is executed, the system would start to collect the traffic statistics for port 80</p>
 <p>You can add more if you want</p>
+<p>The unit is byte</p>
 <hr>
 <p>After, you can get the inbound traffic in byte unit by executing: </p>
 <p>./traffic_accounting.sh get 80 in</p>
